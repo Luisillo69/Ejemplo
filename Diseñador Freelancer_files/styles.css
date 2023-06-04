@@ -1,0 +1,127 @@
+:root{
+    --blanco: #FFFFFF;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secudario: #0097A7;
+    --gris: #757575
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px; /* 1rem = 10px*/
+    font-family:'Krub', sans-serif;
+}
+
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+
+.titulo span{
+    font-size: 2rem;
+
+}
+.contenedor{
+    max-width: 120rem; /* "max-width" indica a este contenedor que tome 1200 pixeles o 120 rem como maximo solo si esta ese espacio disponible */
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;   /* o puedes utilizar solo "margin: 0 auto 0 auto;" */
+}
+
+.boton {
+    background-color: var(--secudario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+
+}
+.nav-bg{
+    background-color: var(--secudario);
+}
+
+.navegacion-principal{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+@media (min-width: 768px) { /*768 px es la medida para tablet */
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between; /* Distribulle el contenido*/
+    }
+
+}
+.navegacion-principal a {
+    display: block; /* definimos el display como bloque para centarlo esto se hace cuando estamos utilizando el "flex"*/
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none; /* Nos ayuda a quitar la linea debajo de los enlaces */
+    font-size: 2rem;
+    font-weight: bold; /* poner negritas al texto*/
+    padding: 1rem; /* Es igual a "padding: 1rem 1rem 1rem 1rem;" y los ayuda a poner que tan arriba este o tan abajo o a la izquierda o derecha*/
+}
+
+.navegacion-principal a:hover{ /*hover ayuda a poner un efeco sobre las palabras que queramos cuando se pone el cursos sobre dichas palabras*/
+    background-color: var(--primario); /* Pone un color de fondo en las palabras cuando ponemos el cursor sobre dicha palabra */
+    color: var(--oscuro); /* Color de en que se ponen las palabras al poner el cursos sobre ellas*/
+
+}
+
+.hero {
+    background-image: url("../img/hero.jpg"); /* con este comando se agregan imagenes y con ".." se utilizan para msotrar que se sale de la carpeta actual para asi poder entrar a la carpeta donde esta ubicado nuestra imagen */
+    background-repeat: no-repeat; /* con este comando indicamos que no queremos que se repita la imagen cuando el tamaño de la imagen no alcance a abarca todo el espacio donde se ubico en nuestro diseño web */
+    background-size: cover; /* ajusta el tamaño de la imagen para ocupar todo el espacio donde se ubico sin dejar espacios en blanco */
+    height: 410px; /*tamaño de contenido */
+    position: relative; /*la clase padre debe tener la posicion relativa */
+}
+
+.contenido-hero {
+    position: absolute; /* la clase hijo debte tener la posicion absoluta esto del padre y del hijo funciona de forma que el hijo se guia en coordenadas sobre el harea donde esta el contenido del padre*/
+    background-color: rgba(0,0,0,.5); /* rgb significa (rojo verde y azul en ingles) y a ( es el nivel de transparencia que queremos darle a nuestro formato y solo va del 1 al 0*/
+    background-color: rgb( 0 0 0 / 50%); /*esta es la forma mas nueva de darle color y sombreado al contenido en esta ya no se necesitan comas y el sombreado se define con un "/" y el porcentaje de sombreado que este ya va de 1% hasta 100% (no todos los navegadores soportan esta sintaxis ya que es nueva)*/
+    width: 100%; /* si se esta utilizando un pading no es buena idea utlizar estos 2 valores al 100% es mejor eliminar el padding para darle un mejor formato al sombreado de la forma */
+    height: 100%;
+
+    display: flex; /* alinea a el contenido de los hijos de esta clase de izquierda a derecha */
+    flex-direction: column; /* esto ayuda que se alinien de arriba hacia bajo */
+    align-items: center; /* se usa para alinear columnas*/
+}
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+.ubicacion { /* alineamos la imagen al lado del texto */
+    display: flex;
+    align-items: flex-end;
+}
